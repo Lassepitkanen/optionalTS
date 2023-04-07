@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "skipLibCheck": true,
+  },
+  "include": ["src/index.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
