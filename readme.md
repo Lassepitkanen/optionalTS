@@ -5,14 +5,14 @@ OptionalTS is an npm package for TypeScript that provides an Optional class simi
 
 You can install the package using npm:
 ```sh
-npm install optionalts
+npm install @lassepitkanen/optionalts
 ```
 
 ## Usage
 
 You can import the Optional class in your TypeScript code:
 ```ts
-import { Optional } from 'optionalts';
+import { Optional } from '@lassepitkanen/optionalts';
 ```
 ### Creating an Optional
 
