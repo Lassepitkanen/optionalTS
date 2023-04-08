@@ -163,8 +163,8 @@ Returns the content of this Optional if it is not empty, or the specified value 
 #### orElseGet<K extends () => any>(func: K): ReturnType<K> | NonNullable<T>
 Returns the content of this Optional if it is not empty, or the result of the given function otherwise.
 
-#### #orElseThrow<K extends Error>(error: K): never | NonNullable<T>
+#### orElseThrow<K extends Error>(error: K): never | NonNullable<T>
 Returns the content of this Optional if it is not empty, or throws the specified error otherwise.
 
-#### #equals(optional: Optional<T>): boolean
+#### equals(optional: Optional<T>): boolean
 Compares this Optional with another to determine equality. Returns true if the two Optional objects are equal, false otherwise.
