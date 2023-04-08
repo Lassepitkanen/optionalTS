@@ -1,5 +1,5 @@
 {
-    "name": "lassepitkanen/optionalts",
+    "name": "@lassepitkanen/optionalts",
     "vesrion": "1.0.0",
     "description": "TypeScript library that provides an Optional<T> type similar to Java's Optional class.",
     "author": "Lasse Pitkänen",
