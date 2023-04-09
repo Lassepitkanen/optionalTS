@@ -5,7 +5,7 @@
     "author": "Lasse Pitkänen",
     "license": "MIT",
     "repository": "lassepitkanen/optionalts",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "./lib/cjs/index.js",
     "types": "./lib/cjs/types/index.d.ts",
     "scripts": {
