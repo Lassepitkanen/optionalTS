@@ -11,8 +11,8 @@ export abstract class Optional<T> {
      * @param value - The value to wrap in an Optional.
      * @returns {Optional<T>} - An Optional containing the specified value or an empty Optional.
      */
-    static of<T>(value: T): Optional<T> {
-        return value != null ? new Some(value) : new None(value);
+    static of<T>(value: T): Optional<NonNullable<T>> {
+        return value != null ? new Some(value) : (new None(value) as Optional<NonNullable<T>>);
     }
 
     /**
