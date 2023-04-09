@@ -20,7 +20,7 @@ export abstract class Optional<T> {
      *
      * @returns {Optional<undefined>} - An empty Optional.
      */
-    static empty(): Optional<undefined> {
+    static empty(): Optional<any> {
         return new None(undefined);
     }
 
