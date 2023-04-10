@@ -30,7 +30,7 @@ export abstract class Optional<T> {
      * @param mapper - A function that maps the content of this Optional.
      * @returns An Optional that wraps the result of the mapping function if this Optional is not empty, otherwise an empty Optional.
      */
-    abstract map<K extends (param: NonNullable<T>) => any>(mapper: K): Optional<ReturnType<K>> | Optional<T>;
+    abstract map<K extends (param: NonNullable<T>) => any>(mapper: K): Optional<ReturnType<K>>;
 
     /**
      * Returns true if this Optional contains a value, false otherwise.
@@ -104,9 +104,9 @@ export class Some<T> extends Optional<T> {
         super();
     }
 
-    map<K extends (param: NonNullable<T>) => any>(mapper: K): Some<ReturnType<K>> {
+    map<K extends (param: NonNullable<T>) => any>(mapper: K): Optional<ReturnType<K>> {
         this.content = mapper(this.content);
-        return this as Some<ReturnType<K>>;
+        return this as Optional<ReturnType<K>>;
     }
 
     isEmpty(): boolean {
@@ -144,8 +144,8 @@ export class None<T> extends Optional<T> {
         super();
     }
 
-    map(): None<T> {
-        return this;
+    map<K extends () => any>(): Optional<ReturnType<K>> {
+        return this as Optional<ReturnType<K>>;
     }
 
     isEmpty(): boolean {
