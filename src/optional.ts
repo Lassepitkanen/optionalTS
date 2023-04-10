@@ -86,7 +86,7 @@ export abstract class Optional<T> {
      * @returns The content of this Optional if it is not empty.
      * @throws The specified error if this Optional is empty.
      */
-    abstract orElseThrow<K extends Error>(error: K): never | NonNullable<T>;
+    abstract orElseThrow<K extends () => Error>(func: K): never | NonNullable<T>;
 
     /**
      compares this optional with another to determine equality.
@@ -172,7 +172,7 @@ export class None<T> extends Optional<T> {
         return func();
     }
 
-    orElseThrow<K extends Error>(error: K): never {
-        throw error;
+    orElseThrow<K extends () => Error>(func: K): never {
+        throw func();
     }
 }

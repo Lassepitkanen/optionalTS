@@ -132,13 +132,13 @@ describe('Optional', () => {
     describe('orElseThrow', () => {
         it('should return the value of a Some', () => {
             const optional = Optional.of('hello');
-            const value = optional.orElseThrow(new Error('should not throw'));
+            const value = optional.orElseThrow(() => new Error('should not throw'));
             expect(value).toBe('hello');
         });
 
         it('should throw the given error for a None', () => {
             const optional = Optional.empty();
-            expect(() => optional.orElseThrow(new Error('should throw'))).toThrowError('should throw');
+            expect(() => optional.orElseThrow(() => new Error('should throw'))).toThrowError('should throw');
         });
     });
 
